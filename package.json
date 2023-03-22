@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "postbuild": "copyfiles -f ./*.html ./dist/",
     "watch:": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
   },
   "author": "",

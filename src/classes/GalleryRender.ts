@@ -3,12 +3,16 @@ import { Gallery } from "../interfaces/Gallery";
 export class GalleryRender {
   constructor(private container: HTMLUListElement) {}
   render(images: Gallery) {
-    images.forEach((image) => {
+    Array(images.count).forEach((image, index) => {
       const li = document.createElement("li");
+      const a = document.createElement("a");
       const img = document.createElement("img");
-      img.src = image.src;
+      a.href = image.src + "big/img" + (new Array(3).join("0") + index + 1).substr(-3) + ".jpg";
+      a.title = image.label;
+      img.src = image.src + "mini/img" + (new Array(3).join("0") + index + 1).substr(-3) + ".jpg";
       img.alt = image.label;
-      li.append(img);
+      a.append(img);
+      li.append(a);
       this.container.append(li);
     });
   }
