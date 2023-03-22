@@ -1,5 +1,4 @@
 import { Gallery } from "../interfaces/Gallery";
-import { Image } from "../interfaces/Image";
 
 export class GalleryRender {
   constructor(private container: HTMLUListElement) {}
